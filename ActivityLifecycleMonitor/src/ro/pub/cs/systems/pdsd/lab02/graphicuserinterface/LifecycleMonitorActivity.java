@@ -74,7 +74,10 @@ public class LifecycleMonitorActivity extends Activity {
         okButton.setOnClickListener(buttonClickListener);
         Button cancelButton = (Button)findViewById(R.id.cancel_button);
         cancelButton.setOnClickListener(buttonClickListener);
-        Log.d(Constants.TAG, "onCreate() method was invoked");
+        if (savedInstanceState != null)
+        	Log.d(Constants.TAG, "onCreate() method was already invoked");
+        else
+        	Log.d(Constants.TAG, "onCreate() method was invoked");
     }    
     
     @Override
